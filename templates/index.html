@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JARVIS Desktop AI</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+<header><div class="logo"><span>J</span><div>J.A.R.V.I.S.<small>PERSONAL DESKTOP INTELLIGENCE</small></div></div><div class="sys"><i></i> SYSTEM ONLINE <b id="clock"></b></div></header>
+<main>
+<section class="left">
+<div class="tag">YOUR DESKTOP ASSISTANT</div><h1>At your<br><em>service.</em></h1>
+<div class="reactor"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="orb">J</div></div>
+<div class="status" id="status">Checking system...</div>
+<div class="tools">
+<button data-launch="notepad">▤ Notepad</button><button data-launch="calculator">＋ Calculator</button><button data-launch="paint">▧ Paint</button><button data-launch="explorer">▣ File Explorer</button>
+</div>
+<div class="smallnote">App launching is limited to this safe allowlist. JARVIS will not execute arbitrary terminal commands.</div>
+</section>
+<section class="chatpanel">
+<div class="panelhead"><div><div class="tag">NEURAL INTERFACE</div><h2>Talk to JARVIS</h2></div><button id="voiceToggle" class="ghost">🔊 Voice on</button></div>
+<div id="chat" class="chat"><div class="msg bot"><b>J</b><p>Good evening. I'm ready. Ask me a question or use the desktop tools. Try “open calculator” or “weather in Hyderabad”.</p></div></div>
+<div class="typing" id="typing" hidden>JARVIS IS THINKING...</div>
+<div class="entry"><button id="mic" title="Voice input">🎙</button><input id="prompt" placeholder="Ask JARVIS anything..." autocomplete="off"><button id="send">SEND ➤</button></div>
+<div class="hint">ENTER TO SEND · MICROPHONE REQUIRES CHROME / EDGE PERMISSION</div>
+</section>
+<aside>
+<div class="card"><div class="tag">DESKTOP TOOLS</div><h3>File finder</h3><div class="inline"><input id="fileTerm" placeholder="Search filename"><button id="fileSearch">GO</button></div><div id="fileResults" class="results">Search Desktop, Documents and Downloads.</div></div>
+<div class="card"><div class="tag">LOCAL AI MEMORY</div><h3>Remember a note</h3><textarea id="memoryText" placeholder="Example: My preferred language is Python."></textarea><button id="saveMemory" class="wide">SAVE MEMORY</button><div id="memories" class="results"></div></div>
+<div class="card"><div class="tag">LIVE INFORMATION</div><h3>Weather & news</h3><div class="inline"><input id="city" value="Hyderabad" aria-label="City"><button id="weather">WEATHER</button></div><div id="weatherResult" class="results"></div><button id="news" class="wide secondary">LOAD WORLD HEADLINES</button><div id="newsResult" class="results"></div></div>
+<div class="card"><div class="tag">INTEGRATIONS</div><h3>Connect more features</h3><p class="muted">Email, calendar, smart home, face recognition and wake-word support need separate permissions, libraries and account/device setup.</p><div class="chips"><span>OAuth</span><span>Camera</span><span>MQTT</span><span>Wake word</span></div></div>
+</aside>
+</main>
+<script src="{{ url_for('static',filename='app.js') }}"></script>
+</body></html>
